@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulado — Português 6º ano | Teatro dos Pronomes 🎭</title>
+<style>
+  :root{--paper:#faf3e5;--ink:#3b271a;--navy:#2b3f6b;--navy2:#1f2f52;--bordo:#8b1e3f;--red:#c0392b;--red-d:#a02f22;--gold:#c8971f;--green:#2e8b57;--green-d:#20694a;--card:#fff;--line:#e7dcc5;--soft:#f4ead4;--gray:#8a8a8a}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:'Segoe UI',system-ui,sans-serif;background:var(--paper);color:var(--ink);font-size:18px;line-height:1.6}
+  .wrap{max-width:900px;margin:0 auto;padding:16px}
+  header.top{background:var(--navy);color:#fff;border-radius:20px;padding:22px 24px;margin:12px 0 0;border-bottom:8px solid var(--bordo)}
+  header.top h1{margin:0 0 6px;font-size:26px}
+  header.top p{margin:0;opacity:.95;font-size:15px}
+  .prova-head{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 16px;margin:12px 0;font-size:15px}
+  .prova-head b{color:var(--navy2)}
+  nav.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+  nav.tabs a{background:#fff;border:2px solid var(--line);border-radius:999px;padding:8px 14px;text-decoration:none;color:var(--ink);font-weight:600;font-size:15px}
+  nav.tabs a.active{background:var(--navy);border-color:var(--navy);color:#fff}
+  .save-bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;background:#fff;border:1px dashed var(--line);border-radius:14px;padding:10px 14px;font-size:14px;margin:10px 0}
+  .save-bar button{cursor:pointer;border:none;border-radius:10px;padding:8px 12px;font-weight:600;font-size:14px}
+  .btn-exp{background:#e7edf7;color:var(--navy2)}.btn-imp{background:#dff0e6;color:var(--green-d)}.btn-zero{background:#f7e0e0;color:#a83232}
+  #saveInfo{color:#8a8674;margin-left:auto}
+  .q{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0}
+  .q .qn{font-weight:700;margin-bottom:8px}
+  .q .pts{color:var(--red-d);font-weight:700;font-size:14px}
+  .q .badge{display:inline-block;background:#eef2f7;color:var(--navy2);border-radius:999px;font-size:12px;padding:2px 8px;margin-left:6px}
+  .opt{display:block;border:1px solid var(--line);border-radius:10px;padding:9px 13px;margin:7px 0;cursor:pointer}
+  .opt:hover{background:var(--soft)}
+  .opt.sel{border-color:var(--navy2);background:#eaf1f8}
+  .opt .lt{font-weight:700;margin-right:8px}
+  .opt.correct{border-color:var(--green);background:#e9f6ee}
+  .opt.wrong{border-color:var(--red);background:#fbeaea}
+  .expl{display:none;margin-top:6px;font-size:14px;border-radius:8px;padding:7px 11px}
+  .expl.show{display:block}.expl.g{background:#e9f6ee;color:var(--green-d)}.expl.b{background:#f0f0f0;color:#555}
+  .code-box{background:#fdeeee;border:1px solid #f0c4c4;border-radius:14px;padding:14px 16px;margin:16px 0}
+  .code-box input{font-size:16px;padding:8px;border:1px solid var(--line);border-radius:8px;width:150px;text-transform:uppercase}
+  .btn{cursor:pointer;border:none;border-radius:12px;padding:11px 18px;font-weight:700;font-size:16px}
+  .btn-red{background:var(--bordo);color:#fff}
+  #result{font-size:20px;font-weight:700;margin:10px 0}
+  .progress{position:sticky;top:0;background:var(--paper);padding:8px 0;z-index:5}
+  .bar{height:12px;background:#eee;border-radius:999px;overflow:hidden}
+  .bar>div{height:100%;background:var(--bordo);width:0}
+  .footer-nav{display:flex;justify-content:space-between;margin:20px 0;gap:10px;flex-wrap:wrap}
+  .footer-nav a{background:var(--navy);color:#fff;text-decoration:none;border-radius:12px;padding:12px 18px;font-weight:700}
+  .modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.4);display:none;align-items:center;justify-content:center;z-index:99}
+  .modal-bg.show{display:flex}
+  .modal{background:#fff;border-radius:16px;padding:20px;max-width:520px;width:92%}
+  .modal textarea{width:100%;min-height:120px}
+  .modal button{margin-top:10px;border:none;border-radius:10px;padding:9px 14px;font-weight:600;cursor:pointer}
+  small.muted{color:#8a8674}
+  .romanas{background:#f7faff;border:1px dashed #b9cbe0;border-radius:10px;padding:8px 12px;margin:8px 0;font-size:16px}
+  .texto{background:#f4ead4;border-left:4px solid var(--gold);border-radius:8px;padding:8px 12px;margin:8px 0;font-size:15px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>📝 Simulado — Teatro dos Pronomes 🎭</h1>
+    <p>Colégio São José · Ensino Fundamental · Prova de Língua Portuguesa</p>
+  </header>
+  <div class="prova-head">
+    <b>Aluno(a):</b> ______________________________ &nbsp; <b>Turma:</b> 6º ano<br>
+    <b>Professor:</b> Monier Julio dos Passos &nbsp; <b>Data da prova:</b> sexta-feira<br>
+    <b>Conteúdo:</b> Pronomes (pessoais, tratamento e demonstrativos) + interpretação &nbsp; · &nbsp; <b>28 questões</b>
+  </div>
+  <nav class="tabs">
+    <a href="index.html">🏠 Início</a>
+    <a href="leitura-guiada.html">📖 Leitura Guiada</a>
+    <a href="quiz.html">🎯 Quiz</a>
+    <a href="resumo.html">🗺️ Resumo</a>
+    <a class="active" href="simulado.html">📝 Simulado</a>
+  </nav>
+
+  <div class="progress"><div class="bar"><div id="pbar"></div></div>
+    <small class="muted" id="ptxt">0 de 28 respondidas</small></div>
+
+  <div class="save-bar">
+    <button class="btn-exp" onclick="exportar()">📥 Exportar</button>
+    <button class="btn-imp" onclick="abrirImport()">📤 Importar</button>
+    <button class="btn-zero" onclick="zerar()">🗑️ Zerar tudo</button>
+    <span id="saveInfo">—</span>
+  </div>
+
+  <div id="sim"></div>
+
+  <div class="code-box">
+    <h3>🔓 Ver gabarito comentado</h3>
+    <p>Responda tudo e digite o código <b>SIM-XX-YY</b> (a mãe/professor combina com você):</p>
+    <input id="codeInput" placeholder="SIM-00-XX" maxlength="9">
+    <button class="btn btn-red" onclick="liberar()">Liberar gabarito</button>
+    <div id="result"></div>
+    <p><small class="muted">Dica para a mãe: o código é <b>SIM-</b> + nº de acertos com 2 dígitos + <b>-</b> + 2 letras (sem I e O). Ex.: 22 acertos → <b>SIM-22-KP</b>.</small></p>
+  </div>
+
+  <div class="footer-nav">
+    <a href="resumo.html">← Resumo</a>
+    <a href="index.html">🏠 Início</a>
+  </div>
+  <p><small class="muted">Feito com carinho para o(a) jovem aprendiz. Questões originais baseadas no livro de Língua Portuguesa do 6º ano (Colégio São José) e nas listas do professor.</small></p>
+</div>
+
+<div class="modal-bg" id="importModal">
+  <div class="modal"><h3>📤 Importar respostas</h3><p>Cole o texto exportado:</p>
+    <textarea id="importText"></textarea>
+    <div><button class="btn-imp" onclick="fazerImport()">Importar</button>
+    <button class="btn-zero" onclick="fecharImport()">Cancelar</button></div></div>
+</div>
+
+<script>
+const Q=[
+ {q:"Assinale a alternativa que apresenta APENAS um pronome pessoal do caso RETO:",opts:[
+   {t:"eu",ok:true,why:"Correto! 'Eu' é do caso reto (funciona como sujeito)."},
+   {t:"me",ok:false,why:"'Me' é oblíquo (complemento do verbo)."},
+   {t:"mim",ok:false,why:"'Mim' é oblíquo (aparece depois de 'para', por exemplo)."},
+   {t:"lhe",ok:false,why:"'Lhe' é oblíquo (complemento)."}]},
+ {q:"Na frase 'Nós vencemos a partida', o pronome 'nós' é da:",opts:[
+   {t:"1ª pessoa do plural",ok:true,why:"Isso! 'Nós' = 1ª pessoa (quem fala) do plural."},
+   {t:"1ª pessoa do singular",ok:false,why:"1ª do singular seria 'eu'."},
+   {t:"2ª pessoa do plural",ok:false,why:"2ª do plural seria 'vós'."},
+   {t:"3ª pessoa do plural",ok:false,why:"3ª do plural seria 'eles/elas'."}]},
+ {q:"Na frase 'Eu te avisei ontem', a palavra 'te' é um pronome pessoal do caso:",opts:[
+   {t:"oblíquo",ok:true,why:"Correto! 'Te' é oblíquo: recebe a ação (complemento)."},
+   {t:"reto",ok:false,why:"O reto ali é 'eu'. 'Te' é o complemento."},
+   {t:"de tratamento",ok:false,why:"'Te' não é tratamento; é pronome pessoal oblíquo."},
+   {t:"demonstrativo",ok:false,why:"Demonstrativo é este/esse/aquele."}]},
+ {q:"Assinale a frase CORRETA:",opts:[
+   {t:"Trouxeram um presente para mim.",ok:true,why:"Correto! Depois de 'para' usamos o oblíquo 'mim'."},
+   {t:"Trouxeram um presente para eu.",ok:false,why:"'Eu' é reto (sujeito); depois de 'para' vai 'mim'."},
+   {t:"Trouxeram um presente para si.",ok:false,why:"'Si' é reflexivo; não cabe aqui."},
+   {t:"Trouxeram um presente para contigo.",ok:false,why:"'Contigo' já é 'com + tu'; não se usa 'para contigo'."}]},
+ {q:"O pronome pessoal do caso reto de 3ª pessoa do SINGULAR é:",opts:[
+   {t:"ele / ela",ok:true,why:"Isso! 'Ele/ela' = 3ª pessoa do singular (de quem se fala)."},
+   {t:"eu",ok:false,why:"'Eu' é 1ª pessoa do singular."},
+   {t:"tu",ok:false,why:"'Tu' é 2ª pessoa do singular."},
+   {t:"eles / elas",ok:false,why:"'Eles/elas' é 3ª pessoa do PLURAL."}]},
+ {q:"Assinale a alternativa em que TODAS as palavras são pronomes OBLÍQUOS:",opts:[
+   {t:"me, te, lhe",ok:true,why:"Correto! Todos são oblíquos (complemento do verbo)."},
+   {t:"eu, tu, ele",ok:false,why:"Esses são todos do caso reto (sujeito)."},
+   {t:"me, eu, lhe",ok:false,why:"'Eu' é reto, não oblíquo."},
+   {t:"nós, vós, eles",ok:false,why:"Todos do caso reto (sujeito)."}]},
+ {q:"Evite a repetição. A forma correta de reescrever 'Comprei o livro e li o livro' é:",opts:[
+   {t:"Comprei o livro e o li.",ok:true,why:"Isso! O oblíquo 'o' substitui 'o livro' como complemento."},
+   {t:"Comprei o livro e li ele.",ok:false,why:"'Li ele' é da fala informal; no padrão usamos 'o li'."},
+   {t:"Comprei o livro e lhe li.",ok:false,why:"'Lhe' seria para 'a ele/a alguém', não substitui 'o livro' como objeto direto."},
+   {t:"Comprei o livro e li o mesmo.",ok:false,why:"'O mesmo' não é a forma recomendada para substituir aqui."}]},
+ {q:"Complete: 'Você quer estudar ____ hoje à tarde?' (com + eu)",opts:[
+   {t:"comigo",ok:true,why:"Correto! 'Comigo' = com + eu (pronome oblíquo)."},
+   {t:"com eu",ok:false,why:"Não se diz 'com eu'; a forma certa é 'comigo'."},
+   {t:"com mim",ok:false,why:"Não se diz 'com mim'; a forma certa é 'comigo'."},
+   {t:"consigo",ok:false,why:"'Consigo' é reflexivo (com a própria pessoa), não cabe aqui."}]},
+ {q:"O pronome de tratamento usado para o PAPA é:",opts:[
+   {t:"Vossa Santidade",ok:true,why:"Correto! O Papa: Vossa Santidade."},
+   {t:"Vossa Majestade",ok:false,why:"Vossa Majestade é para reis e rainhas."},
+   {t:"Vossa Eminência",ok:false,why:"Vossa Eminência é para cardeais."},
+   {t:"Vossa Excelência",ok:false,why:"Vossa Excelência é para altas autoridades do governo."}]},
+ {q:"O pronome de tratamento usado para um CARDEAL é:",opts:[
+   {t:"Vossa Eminência",ok:true,why:"Isso! Cardeais: Vossa Eminência."},
+   {t:"Vossa Santidade",ok:false,why:"Vossa Santidade é só para o Papa."},
+   {t:"Vossa Reverendíssima",ok:false,why:"Essa é para sacerdotes e religiosos em geral."},
+   {t:"Vossa Alteza",ok:false,why:"Vossa Alteza é para príncipes e duques."}]},
+ {q:"O pronome de tratamento usado para REIS E RAINHAS é:",opts:[
+   {t:"Vossa Majestade",ok:true,why:"Correto! Reis e rainhas: Vossa Majestade."},
+   {t:"Vossa Alteza",ok:false,why:"Vossa Alteza é para príncipes, princesas e duques."},
+   {t:"Vossa Magnificência",ok:false,why:"Vossa Magnificência é para reitores de universidade."},
+   {t:"Vossa Senhoria",ok:false,why:"Vossa Senhoria é para correspondência comercial."}]},
+ {q:"O pronome de tratamento usado para REITORES de universidade é:",opts:[
+   {t:"Vossa Magnificência",ok:true,why:"Isso! Reitores: Vossa Magnificência."},
+   {t:"Vossa Excelência",ok:false,why:"Vossa Excelência é para autoridades do governo."},
+   {t:"Vossa Eminência",ok:false,why:"Vossa Eminência é para cardeais."},
+   {t:"Vossa Senhoria",ok:false,why:"Vossa Senhoria é para uso comercial e funcionários graduados."}]},
+ {q:"O pronome de tratamento usado para SACERDOTES e religiosos é:",opts:[
+   {t:"Vossa Reverendíssima",ok:true,why:"Correto! Sacerdotes/religiosos: Vossa Reverendíssima."},
+   {t:"Vossa Santidade",ok:false,why:"Vossa Santidade é exclusiva do Papa."},
+   {t:"Vossa Alteza",ok:false,why:"Vossa Alteza é para a realeza."},
+   {t:"Vossa Magnificência",ok:false,why:"Vossa Magnificência é para reitores."}]},
+ {q:"O pronome de tratamento usado para PRÍNCIPES e DUQUES é:",opts:[
+   {t:"Vossa Alteza",ok:true,why:"Isso! Príncipes, princesas e duques: Vossa Alteza."},
+   {t:"Vossa Majestade",ok:false,why:"Vossa Majestade é para reis e rainhas."},
+   {t:"Vossa Excelência",ok:false,why:"Vossa Excelência é para autoridades do governo."},
+   {t:"Vossa Eminência",ok:false,why:"Vossa Eminência é para cardeais."}]},
+ {q:"Para uma MOÇA SOLTEIRA, o tratamento tradicional é:",opts:[
+   {t:"a senhorita",ok:true,why:"Correto! Moças solteiras: a senhorita."},
+   {t:"a senhora",ok:false,why:"'A senhora' é para mulheres adultas em geral."},
+   {t:"Vossa Alteza",ok:false,why:"Vossa Alteza é para a realeza."},
+   {t:"Vossa Senhoria",ok:false,why:"Vossa Senhoria é de uso comercial."}]},
+ {q:"Falando DIRETAMENTE com a autoridade, o correto é:",opts:[
+   {t:"Vossa Excelência precisa de ajuda?",ok:true,why:"Correto! Usamos VOSSA quando falamos COM a pessoa."},
+   {t:"Sua Excelência precisa de ajuda?",ok:false,why:"'Sua' é para quando falamos SOBRE a pessoa."},
+   {t:"Tua Excelência precisa de ajuda?",ok:false,why:"'Tua' não é tratamento formal apropriado aqui."},
+   {t:"Nossa Excelência precisa de ajuda?",ok:false,why:"'Nossa' não serve como tratamento."}]},
+ {q:"Falando SOBRE a autoridade (para outra pessoa), o correto é:",opts:[
+   {t:"Sua Excelência chegará ao anoitecer.",ok:true,why:"Correto! Usamos SUA quando falamos SOBRE a pessoa."},
+   {t:"Vossa Excelência chegará ao anoitecer.",ok:false,why:"'Vossa' seria se falássemos diretamente COM ela."},
+   {t:"Tua Excelência chegará ao anoitecer.",ok:false,why:"'Tua' não é tratamento formal adequado."},
+   {t:"Minha Excelência chegará ao anoitecer.",ok:false,why:"'Minha' não é pronome de tratamento."}]},
+ {q:"Assinale a frase CORRETA quanto ao verbo com pronome de tratamento:",opts:[
+   {t:"Vossa Senhoria assinou os documentos.",ok:true,why:"Correto! O verbo fica na 3ª pessoa (assinou)."},
+   {t:"Vossa Senhoria assinaste os documentos.",ok:false,why:"'Assinaste' é 2ª pessoa; o certo é a 3ª: 'assinou'."},
+   {t:"Vossa Senhoria assinei os documentos.",ok:false,why:"'Assinei' é 1ª pessoa; use a 3ª: 'assinou'."},
+   {t:"Vossa Senhoria assinais os documentos.",ok:false,why:"'Assinais' é 2ª do plural; o certo é 'assinou'."}]},
+ {q:"Complete: '____ caneta aqui na minha mão é nova.'",opts:[
+   {t:"Esta",ok:true,why:"Isso! ESTA = perto de quem fala ('aqui comigo')."},
+   {t:"Essa",ok:false,why:"ESSA seria perto de quem ouve ('aí com você')."},
+   {t:"Aquela",ok:false,why:"AQUELA é para algo longe dos dois."},
+   {t:"Aquilo",ok:false,why:"'Aquilo' é neutro e indica algo distante."}]},
+ {q:"Complete: '____ mochila aí ao seu lado é bonita.'",opts:[
+   {t:"Essa",ok:true,why:"Correto! ESSA = perto de quem ouve ('aí com você')."},
+   {t:"Esta",ok:false,why:"ESTA seria perto de quem fala."},
+   {t:"Aquela",ok:false,why:"AQUELA é para algo longe dos dois."},
+   {t:"Isto",ok:false,why:"'Isto' é neutro e indica algo perto de quem fala."}]},
+ {q:"Complete: '____ prédio lá do outro lado da rua é antigo.'",opts:[
+   {t:"Aquele",ok:true,why:"Isso! AQUELE = longe de quem fala e de quem ouve."},
+   {t:"Este",ok:false,why:"ESTE seria perto de quem fala."},
+   {t:"Esse",ok:false,why:"ESSE seria perto de quem ouve."},
+   {t:"Isso",ok:false,why:"'Isso' é neutro e indica algo perto do ouvinte."}]},
+ {q:"No conto 'A princesa, o fogo e a chuva', o rei prometeu a filha a quem:",opts:[
+   {t:"vencesse uma corrida no dia do casamento",ok:true,why:"Correto! A condição do rei era vencer a corrida."},
+   {t:"construísse o maior castelo",ok:false,why:"O texto não fala em castelo."},
+   {t:"trouxesse mais ouro",ok:false,why:"A condição era a corrida, não a riqueza."},
+   {t:"contasse a melhor história",ok:false,why:"Não houve disputa de histórias no conto."}]},
+ {q:"No conto, a Chuva venceu o Fogo porque:",opts:[
+   {t:"despejou uma cortina de água e apagou o Fogo",ok:true,why:"Isso! A Chuva apagou o Fogo perto do fim da corrida."},
+   {t:"corria muito mais rápido desde o início",ok:false,why:"No início o Fogo é que ia ganhando (ajudado pelo vento)."},
+   {t:"pediu ajuda ao rei",ok:false,why:"O rei não interferiu na corrida."},
+   {t:"escondeu-se do Fogo",ok:false,why:"Ela não se escondeu; apagou o Fogo com água."}]},
+ {q:"Segundo o conto, por que hoje existe inimizade entre o fogo e a chuva?",opts:[
+   {t:"por causa da disputa pela princesa no dia do casamento",ok:true,why:"Correto! A rivalidade vem daquela disputa; por isso lembram o casamento quando chove forte."},
+   {t:"porque nunca se encontraram",ok:false,why:"Eles se encontraram, sim, na corrida."},
+   {t:"porque o rei os expulsou do reino",ok:false,why:"O texto não fala em expulsão."},
+   {t:"porque a princesa fugiu dos dois",ok:false,why:"A princesa não fugiu; ela dançou feliz na chuva."}]},
+ {q:"Na frase 'Respeite os mais velhos: isso mostra a sua educação', o pronome 'isso':",opts:[
+   {t:"retoma a ideia dita antes (respeitar os mais velhos)",ok:true,why:"Correto! 'Isso' aponta para o que já foi dito antes (retoma)."},
+   {t:"antecipa uma ideia que ainda virá",ok:false,why:"Aqui ele aponta para trás (o que já foi dito), então retoma."},
+   {t:"indica um objeto perto de quem fala",ok:false,why:"No texto, o demonstrativo organiza as ideias; não localiza objeto."},
+   {t:"é um pronome de tratamento",ok:false,why:"'Isso' é demonstrativo, não tratamento."}]},
+ {romanas:true, q:"Sobre os pronomes pessoais, analise as afirmativas:",
+  afirms:["I. 'Eu' é um pronome do caso reto (sujeito).","II. 'Me' é um pronome do caso oblíquo (complemento).","III. 'Mim' é um pronome do caso reto.","IV. 'Nós' é da 1ª pessoa do plural."],
+  opts:[
+   {t:"Apenas I, II e IV estão corretas",ok:true,why:"Correto! A III está errada: 'mim' é OBLÍQUO, não reto."},
+   {t:"Apenas I e III estão corretas",ok:false,why:"A III está errada e a II e a IV estão certas."},
+   {t:"Apenas II e III estão corretas",ok:false,why:"A III está errada; a I e a IV também estão corretas."},
+   {t:"I, II, III e IV estão corretas",ok:false,why:"A III está errada: 'mim' é oblíquo."}]},
+ {romanas:true, q:"Sobre os pronomes de tratamento, analise as afirmativas:",
+  afirms:["I. 'Vossa Santidade' é o tratamento usado para o Papa.","II. Usamos 'Vossa' quando falamos diretamente COM a pessoa.","III. Com pronome de tratamento, o verbo vai na 2ª pessoa.","IV. 'Vossa Majestade' é o tratamento para reis e rainhas."],
+  opts:[
+   {t:"Apenas I, II e IV estão corretas",ok:true,why:"Correto! A III está errada: o verbo fica na 3ª pessoa."},
+   {t:"Apenas I e II estão corretas",ok:false,why:"A IV também está correta (Vossa Majestade = reis)."},
+   {t:"Apenas III e IV estão corretas",ok:false,why:"A III está errada; a I e a II estão corretas."},
+   {t:"I, II, III e IV estão corretas",ok:false,why:"A III está errada: com tratamento o verbo vai na 3ª pessoa."}]},
+ {romanas:true, q:"Sobre os pronomes demonstrativos, analise as afirmativas:",
+  afirms:["I. 'Este' indica algo perto de quem fala.","II. 'Aquele' indica algo perto de quem ouve.","III. 'Isto, isso e aquilo' são formas neutras.","IV. 'Esse' indica algo perto de quem ouve."],
+  opts:[
+   {t:"Apenas I, III e IV estão corretas",ok:true,why:"Correto! A II está errada: 'aquele' indica algo LONGE dos dois."},
+   {t:"Apenas I e II estão corretas",ok:false,why:"A II está errada e a III e a IV estão corretas."},
+   {t:"Apenas II e III estão corretas",ok:false,why:"A II está errada; a I e a IV estão corretas."},
+   {t:"I, II, III e IV estão corretas",ok:false,why:"A II está errada: 'aquele' é para algo longe dos dois."}]}
+];
+
+const KEY="port6sj_pronomes_simulado_v1";
+let store={resp:{}}; const mem={};
+function load(){ try{const r=localStorage.getItem(KEY); if(r)store=JSON.parse(r);}catch(e){ if(mem[KEY])store=JSON.parse(mem[KEY]); } if(!store.resp)store.resp={}; }
+function save(){ store.quando=new Date().toLocaleString('pt-BR'); const r=JSON.stringify(store); try{localStorage.setItem(KEY,r);}catch(e){mem[KEY]=r;} const el=document.getElementById('saveInfo'); if(el)el.textContent="Salvo "+store.quando; }
+
+function seededShuffle(arr,seed){ const a=arr.slice(); let s=seed; for(let i=a.length-1;i>0;i--){ s=(s*9301+49297)%233280; const j=Math.floor(s/233280*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+const ORDER=Q.map((qq,i)=>seededShuffle(qq.opts.map((o,k)=>k), i*11+5));
+
+function render(){
+  const c=document.getElementById('sim'); c.innerHTML="";
+  Q.forEach((qq,i)=>{
+    const div=document.createElement('div'); div.className="q";
+    let h=`<div class="qn">${i+1}) <span class="pts">(0,5)</span> ${qq.q}${qq.romanas?'<span class="badge">números romanos</span>':''}</div>`;
+    if(qq.romanas){ h+=`<div class="romanas">${qq.afirms.join("<br>")}</div>`; }
+    ORDER[i].forEach((optIdx,pos)=>{
+      const o=qq.opts[optIdx]; const lt="ABCD"[pos];
+      const sel=(store.resp[i]===optIdx)?" sel":"";
+      h+=`<div class="opt${sel}" id="o_${i}_${optIdx}" onclick="pick(${i},${optIdx})"><span class="lt">${lt})</span>${o.t}`+
+         `<div class="expl b" id="e_${i}_${optIdx}"></div></div>`;
+    });
+    div.innerHTML=h; c.appendChild(div);
+  });
+  updProg();
+}
+function pick(i,optIdx){ if(store.liberado)return; store.resp[i]=optIdx; store.acertos=contarAcertos(); store.respondidas=Object.keys(store.resp).length; store.total=Q.length; save(); render(); }
+function updProg(){
+  const n=Object.keys(store.resp).length;
+  document.getElementById('pbar').style.width=Math.round(n/Q.length*100)+"%";
+  document.getElementById('ptxt').textContent=n+" de "+Q.length+" respondidas";
+}
+function contarAcertos(){ let n=0; Q.forEach((qq,i)=>{ const s=store.resp[i]; if(s!=null&&qq.opts[s].ok)n++; }); return n; }
+function todas(){ return Object.keys(store.resp).length>=Q.length; }
+
+function liberar(){
+  if(!todas()){ res("⚠️ Responda todas as 28 questões antes de ver o gabarito.","#a83232"); return; }
+  const code=(document.getElementById('codeInput').value||"").trim().toUpperCase();
+  const re=/^SIM-\d{2}-[A-HJ-NP-Z]{2}$/;
+  if(!re.test(code)){ res("⚠️ Código no formato errado. Use <b>SIM-XX-YY</b> (XX número, YY 2 letras sem I e O).","#a83232"); return; }
+  store.liberado=true; save(); mostrarGabarito();
+  res("✅ Gabarito liberado! Você acertou <b>"+contarAcertos()+" de "+Q.length+"</b>. 🎉","#20694a");
+}
+function res(t,c){ const r=document.getElementById('result'); r.innerHTML=t; r.style.color=c; }
+function mostrarGabarito(){
+  Q.forEach((qq,i)=>{
+    const sel=store.resp[i];
+    qq.opts.forEach((o,optIdx)=>{
+      const el=document.getElementById('o_'+i+'_'+optIdx); const ex=document.getElementById('e_'+i+'_'+optIdx);
+      if(!el)return; el.classList.remove('sel');
+      if(o.ok){ el.classList.add('correct'); ex.className="expl g show"; ex.textContent="✔ "+o.why; }
+      else if(sel===optIdx){ el.classList.add('wrong'); ex.className="expl b show"; ex.textContent="✗ "+o.why; }
+      else { ex.className="expl b show"; ex.textContent="✗ "+o.why; }
+      el.onclick=null;
+    });
+  });
+}
+
+function exportar(){ const d=JSON.stringify(store,null,2); const b=new Blob([d],{type:"application/json"}); const a=document.createElement('a'); a.href=URL.createObjectURL(b); a.download="simulado-portugues-6ano-pronomes.json"; a.click(); }
+function abrirImport(){ document.getElementById('importModal').classList.add('show'); }
+function fecharImport(){ document.getElementById('importModal').classList.remove('show'); }
+function fazerImport(){ try{ store=JSON.parse(document.getElementById('importText').value); if(!store.resp)store.resp={}; save(); render(); if(store.liberado)mostrarGabarito(); fecharImport(); }catch(e){ document.getElementById('importText').value="⚠️ Texto inválido.\n"+document.getElementById('importText').value; } }
+function zerar(){ store={resp:{}}; try{localStorage.removeItem(KEY);}catch(e){} save(); render(); res("",""); document.getElementById('codeInput').value=""; }
+
+load(); render();
+if(store.quando) document.getElementById('saveInfo').textContent="Salvo "+store.quando;
+if(store.liberado) mostrarGabarito();
+</script>
+</body>
+</html>
