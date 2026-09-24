@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leitura Guiada — Português 6º ano | Teatro dos Pronomes 🎭</title>
+<style>
+  :root{
+    --paper:#faf3e5; --ink:#3b271a; --bordo:#8b1e3f; --bordo-d:#6a1330;
+    --gold:#c8971f; --gold-d:#a97d12; --navy:#2b3f6b; --plum:#6a3d6b;
+    --card:#fffdf8; --line:#e7dcc5; --soft:#f4ead4;
+    --ok:#2e8b57; --ok-d:#20694a; --warn:#d99a1c; --red:#c0392b;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--paper);color:var(--ink);line-height:1.65;font-size:18px}
+  a{color:var(--bordo-d)}
+  .wrap{max-width:900px;margin:0 auto;padding:16px}
+  header.top{background:linear-gradient(135deg,#8b1e3f,#c8971f);color:#fff;border-radius:20px;padding:26px 24px;margin:12px 0 8px;box-shadow:0 6px 20px rgba(139,30,63,.28)}
+  header.top h1{margin:0 0 6px;font-size:28px}
+  header.top p{margin:0;opacity:.96;font-size:16px}
+  .badge{display:inline-block;background:rgba(255,255,255,.25);border-radius:999px;padding:4px 12px;font-size:14px;margin-top:8px}
+  nav.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+  nav.tabs a{background:#fff;border:2px solid var(--line);border-radius:999px;padding:8px 14px;text-decoration:none;color:var(--ink);font-weight:600;font-size:15px}
+  nav.tabs a.active{background:var(--bordo);border-color:var(--bordo);color:#fff}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;margin:14px 0;box-shadow:0 3px 10px rgba(0,0,0,.04)}
+  .howto{background:var(--soft);border-left:6px solid var(--gold)}
+  .howto h2{margin-top:0}
+  .save-bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;background:#fff;border:1px dashed var(--line);border-radius:14px;padding:10px 14px;font-size:14px;margin:10px 0}
+  .save-bar button{cursor:pointer;border:none;border-radius:10px;padding:8px 12px;font-weight:600;font-size:14px}
+  .btn-exp{background:#f6e2ea;color:var(--bordo-d)}
+  .btn-imp{background:#e7edf7;color:var(--navy)}
+  .btn-zero{background:#f7e0e0;color:#a83232}
+  #saveInfo{color:#8a8674;margin-left:auto}
+  .block{border:1px solid var(--line);border-radius:16px;margin:16px 0;overflow:hidden;background:#fff}
+  .block.locked{opacity:.55}
+  .block-head{padding:14px 18px;font-weight:700;font-size:20px;color:#fff;display:flex;align-items:center;gap:10px;cursor:pointer}
+  .block-body{padding:4px 18px 18px}
+  .block-status{margin-left:auto;font-size:15px;background:rgba(255,255,255,.25);border-radius:999px;padding:2px 10px}
+  .h-bordo{background:var(--bordo)} .h-gold{background:var(--gold-d)} .h-navy{background:var(--navy)} .h-plum{background:var(--plum)}
+  .txt p{margin:10px 0}
+  .keyword{background:#fbe9c2;border-radius:5px;padding:0 4px;font-weight:700}
+  .exemplo{background:#f4ead4;border-left:4px solid var(--gold);border-radius:8px;padding:8px 12px;margin:10px 0;font-size:16px}
+  table.mini{width:100%;border-collapse:collapse;margin:10px 0;font-size:16px}
+  table.mini th,table.mini td{border:1px solid var(--line);padding:7px 8px;text-align:center}
+  table.mini th{background:var(--soft)}
+  .q{background:var(--soft);border-radius:12px;padding:12px 14px;margin:12px 0;border:1px solid var(--line)}
+  .q.red{border:2px solid var(--red);background:#fdeeee}
+  .q .tag{display:inline-block;font-size:12px;font-weight:700;border-radius:999px;padding:2px 8px;margin-bottom:6px}
+  .tag-con{background:#e7edf7;color:var(--navy)}
+  .tag-apl{background:#e3f3e9;color:var(--ok-d)}
+  .q label{font-weight:600;display:block;margin-bottom:6px}
+  .q textarea{width:100%;min-height:64px;border:1px solid var(--line);border-radius:10px;padding:8px;font-family:inherit;font-size:16px;resize:vertical}
+  .alert{border-radius:10px;padding:10px 12px;margin:8px 0;font-size:15px;display:none}
+  .alert.copy{background:#fff6e0;border:1px solid var(--warn);color:#8a6300;display:block}
+  .alert.redwarn{background:#fdeeee;border:1px solid var(--red);color:#a83232;display:block}
+  .modelo{display:none;margin-top:10px;background:#eef7f0;border:1px solid #cfe6d6;border-radius:10px;padding:10px 12px}
+  .modelo.show{display:block}
+  .modelo .mtitle{font-weight:700;color:var(--ok-d);margin-bottom:4px}
+  .chk{margin-top:8px}
+  .chk .cline{display:flex;align-items:center;gap:8px;margin:6px 0;flex-wrap:wrap}
+  .chk .cline span{flex:1;min-width:180px}
+  .chk button{border:1px solid var(--line);background:#fff;border-radius:8px;padding:4px 12px;cursor:pointer;font-weight:600}
+  .chk button.sel-sim{background:var(--ok);color:#fff;border-color:var(--ok)}
+  .chk button.sel-nao{background:var(--red);color:#fff;border-color:var(--red)}
+  .conferir{background:var(--bordo);color:#fff;border:none;border-radius:12px;padding:10px 18px;font-weight:700;font-size:16px;cursor:pointer;margin-top:8px}
+  .conferir:disabled{background:#bcbcbc;cursor:not-allowed}
+  .pegadinhas{background:#fff6e0;border:1px solid var(--gold)}
+  .pegadinhas ol{margin:8px 0 0;padding-left:22px}
+  .pegadinhas li{margin:8px 0}
+  table.cover{width:100%;border-collapse:collapse;margin-top:10px;font-size:15px}
+  table.cover th,table.cover td{border:1px solid var(--line);padding:8px;text-align:left}
+  table.cover th{background:var(--soft)}
+  .revisar{background:#fdeeee;border:1px solid var(--red)}
+  .revisar ul{margin:8px 0 0}
+  .footer-nav{display:flex;justify-content:space-between;margin:20px 0;gap:10px;flex-wrap:wrap}
+  .footer-nav a{background:var(--bordo);color:#fff;text-decoration:none;border-radius:12px;padding:12px 18px;font-weight:700}
+  .modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.4);display:none;align-items:center;justify-content:center;z-index:99}
+  .modal-bg.show{display:flex}
+  .modal{background:#fff;border-radius:16px;padding:20px;max-width:520px;width:92%}
+  .modal textarea{width:100%;min-height:120px}
+  .modal button{margin-top:10px;border:none;border-radius:10px;padding:9px 14px;font-weight:600;cursor:pointer}
+  small.muted{color:#8a8674}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>🎭 Leitura Guiada — Teatro dos Pronomes</h1>
+    <p>Língua Portuguesa · 6º ano · Colégio São José · Prof. Monier Julio dos Passos</p>
+    <p><b>Pronomes</b> pessoais (reto e oblíquo), de tratamento e demonstrativos + interpretação de texto · Prova: <b>sexta-feira</b></p>
+    <span class="badge">Entre nos bastidores e siga um camarim de cada vez ✨</span>
+  </header>
+
+  <nav class="tabs">
+    <a href="index.html">🏠 Início</a>
+    <a class="active" href="leitura-guiada.html">📖 Leitura Guiada</a>
+    <a href="quiz.html">🎯 Quiz</a>
+    <a href="resumo.html">🗺️ Resumo</a>
+    <a href="simulado.html">📝 Simulado</a>
+  </nav>
+
+  <div class="panel howto">
+    <h2>Como usar 👣</h2>
+    <p>Cada cena (bloco) tem um textinho e <b>3 perguntas</b>. Você <b>escreve</b> a resposta com as suas próprias palavras (não vale copiar o texto!). Depois clica em <b>Conferir</b> para ver a resposta modelo e marcar se você acertou os pontos principais. A próxima cena só abre quando você confere a anterior. No fim há uma caixa de <b>pegadinhas</b> e uma tabela mostrando onde cada assunto foi estudado. Tudo o que você escreve fica salvo sozinho neste computador. 💾</p>
+  </div>
+
+  <div class="save-bar">
+    <button class="btn-exp" onclick="exportar()">📥 Exportar</button>
+    <button class="btn-imp" onclick="abrirImport()">📤 Importar</button>
+    <button class="btn-zero" onclick="zerar()">🗑️ Zerar tudo</button>
+    <span id="saveInfo">—</span>
+  </div>
+
+  <div id="blocos"></div>
+
+  <div class="panel pegadinhas">
+    <h2>⚠️ 10 Pegadinhas que a prova adora</h2>
+    <ol>
+      <li><b>Reto x oblíquo:</b> o <u>reto</u> faz o papel de <b>sujeito</b> (quem pratica a ação: eu, tu, ele...); o <u>oblíquo</u> faz o papel de <b>complemento</b> (quem recebe a ação: me, te, o, lhe...).</li>
+      <li><b>eu/tu x mim/ti:</b> <b>eu</b> e <b>tu</b> são do caso RETO (sujeito). <b>mim</b> e <b>ti</b> são OBLÍQUOS. Depois de "para", quase sempre é <b>mim/ti</b>: "Este livro é para <u>mim</u>" (não "para eu").</li>
+      <li><b>VOSSA x SUA:</b> use <b>Vossa</b> quando fala <u>COM</u> a pessoa ("Vossa Excelência aceita um café?"); use <b>Sua</b> quando fala <u>SOBRE</u> a pessoa ("Sua Excelência viajou ontem.").</li>
+      <li><b>Verbo com pronome de tratamento:</b> mesmo com "Vossa", o verbo fica na <b>3ª pessoa</b>: "Vossa Excelência <u>está</u> presente" (certo) — nunca "estais".</li>
+      <li><b>ESTE x ESSE:</b> <b>este</b> = perto de <u>quem fala</u> ("aqui comigo"); <b>esse</b> = perto de <u>quem ouve</u> ("aí com você"). Elas vivem sendo trocadas!</li>
+      <li><b>AQUELE:</b> é para o que está <u>longe dos dois</u> ("lá, distante"). Se ninguém está perto do objeto, é <b>aquele/aquela/aquilo</b>.</li>
+      <li><b>Neutros:</b> <b>isto, isso, aquilo</b> não têm plural nem feminino — servem para coisas que a gente não nomeia ("O que é <u>isso</u>?").</li>
+      <li><b>Pessoa do discurso:</b> 1ª = quem <u>fala</u> (eu/nós); 2ª = com quem se <u>fala</u> (tu/vós, você); 3ª = de quem se <u>fala</u> (ele/ela/eles/elas).</li>
+      <li><b>Você é tratamento, mas manda o verbo na 3ª pessoa:</b> "Você <u>estuda</u>" (não "tu estudas" quando o sujeito é "você").</li>
+      <li><b>Demonstrativo no texto:</b> ele pode <u>retomar</u> algo já dito ("Maria ganhou um livro. <b>Esse</b> livro...") ou <u>antecipar</u> algo que vem ("<b>Isto</b> é importante: ...").</li>
+    </ol>
+  </div>
+
+  <div class="panel">
+    <h2>🎟️ Cobertura — Onde estudei cada assunto</h2>
+    <table class="cover">
+      <tr><th>Tópico da prova</th><th>Páginas do livro</th><th>Cena (bloco)</th></tr>
+      <tr><td>O que é pronome e as 3 pessoas do discurso</td><td>252–253</td><td>Bloco 1</td></tr>
+      <tr><td>Pronomes pessoais do caso RETO (sujeito) — pessoa e número</td><td>253–255</td><td>Bloco 2</td></tr>
+      <tr><td>Pronomes pessoais do caso OBLÍQUO (complemento) + eu/tu × mim/ti</td><td>255–257</td><td>Bloco 3</td></tr>
+      <tr><td>Pronomes de TRATAMENTO + regra Vossa × Sua + verbo na 3ª pessoa</td><td>260–263</td><td>Bloco 4</td></tr>
+      <tr><td>Pronomes DEMONSTRATIVOS (perto de quem fala/ouve/longe)</td><td>268–270</td><td>Bloco 5</td></tr>
+      <tr><td>Demonstrativos no TEXTO (retomar e antecipar)</td><td>270–271</td><td>Bloco 6</td></tr>
+      <tr><td>Interpretação de texto (o conto)</td><td>Lista 1</td><td>Bloco 7</td></tr>
+    </table>
+  </div>
+
+  <div class="panel revisar" id="revisarBox" style="display:none">
+    <h2>🔁 Para revisar</h2>
+    <p>Estas perguntas ficaram marcadas em vermelho (resposta muito parecida com o texto) ou com algum "não" na autoavaliação. Vale reler a cena e reescrever com as suas palavras!</p>
+    <ul id="revisarList"></ul>
+  </div>
+
+  <div class="footer-nav">
+    <a href="index.html">🏠 Início</a>
+    <a href="quiz.html">🎯 Ir para o Quiz →</a>
+  </div>
+  <p><small class="muted">Feito com carinho para o(a) jovem aprendiz. Fonte: livro de Língua Portuguesa do 6º ano (Colégio São José), pp. 252–257, 260–263 e 268–271, e listas 1 e 2 do professor.</small></p>
+</div>
+
+<div class="modal-bg" id="importModal">
+  <div class="modal">
+    <h3>📤 Importar respostas</h3>
+    <p>Cole aqui o texto que você exportou antes:</p>
+    <textarea id="importText"></textarea>
+    <div>
+      <button class="btn-imp" onclick="fazerImport()">Importar</button>
+      <button class="btn-zero" onclick="fecharImport()">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ====== DADOS DA LEITURA (conteúdo original, baseado no livro e nas listas do professor) ======
+const BLOCOS = [
+ {
+  id:"b1", cor:"h-bordo", emoji:"🎬", titulo:"Bloco 1 — Bastidores: as 3 pessoas do discurso",
+  paragrafos:[
+   "Antes de a peça começar, vamos aos bastidores entender uma palavra muito importante: o <span class='keyword'>pronome</span>. Pronome é a palavra que <span class='keyword'>substitui ou acompanha o substantivo</span> (o nome das coisas e das pessoas), indicando as <span class='keyword'>pessoas do discurso</span>. Ele serve para a gente não ficar repetindo o nome o tempo todo. Em vez de dizer 'A Joana pegou a mochila da Joana', dizemos 'A Joana pegou <b>a sua</b> mochila'.",
+   "Toda conversa tem três papéis, as <span class='keyword'>três pessoas do discurso</span>. A <b>1ª pessoa</b> é <span class='keyword'>quem fala</span> (eu, nós). A <b>2ª pessoa</b> é <span class='keyword'>com quem se fala</span> (tu, vós — e também 'você'). A <b>3ª pessoa</b> é <span class='keyword'>de quem se fala</span>, aquele que não está participando da conversa (ele, ela, eles, elas).",
+   "Além da pessoa, todo pronome pessoal tem um <span class='keyword'>número</span>: <b>singular</b> (uma só pessoa: eu, tu, ele) ou <b>plural</b> (mais de uma: nós, vós, eles). Então, ao analisar um pronome, sempre dá para dizer duas coisas: a <u>pessoa</u> (1ª, 2ª ou 3ª) e o <u>número</u> (singular ou plural)."
+  ],
+  perguntas:[
+   {tipo:"conceitual", q:"Com as suas palavras, o que é um pronome e para que ele serve numa frase?",
+    modelo:"Pronome é a palavra que substitui ou acompanha o substantivo (o nome). Ele serve para indicar as pessoas do discurso e para evitar repetir o mesmo nome várias vezes.",
+    chk:["Falei que o pronome substitui ou acompanha o substantivo/nome?","Falei que ele evita a repetição ou indica as pessoas do discurso?"]},
+   {tipo:"aplicacao", q:"Escreva uma frase sua usando o NOME de uma pessoa e depois reescreva a mesma frase trocando o nome por um pronome.",
+    modelo:"Exemplo: 'O Pedro chegou atrasado.' → 'Ele chegou atrasado.' O importante é que, na segunda frase, um pronome (ele/ela) ocupe o lugar do nome.",
+    chk:["Escrevi uma frase com o nome de uma pessoa?","Reescrevi trocando o nome por um pronome (ele, ela...)?"]},
+   {tipo:"aplicacao", q:"Diga a PESSOA (1ª, 2ª ou 3ª) e o NÚMERO (singular ou plural) de cada um: 'nós' e 'ela'.",
+    modelo:"'Nós' é 1ª pessoa do plural (quem fala, mais de um). 'Ela' é 3ª pessoa do singular (de quem se fala, uma pessoa).",
+    chk:["Classifiquei 'nós' como 1ª pessoa do plural?","Classifiquei 'ela' como 3ª pessoa do singular?"]}
+  ]
+ },
+ {
+  id:"b2", cor:"h-gold", emoji:"🌟", titulo:"Bloco 2 — Palco Principal: pronomes do caso RETO",
+  paragrafos:[
+   "No palco principal ficam os <span class='keyword'>protagonistas</span>: os pronomes pessoais do <span class='keyword'>caso reto</span>. Eles fazem o papel de <span class='keyword'>sujeito</span> da frase, ou seja, indicam <b>quem pratica a ação</b>. A dica de ouro é perguntar ao verbo: <i>'Quem pratica a ação?'</i> — a resposta costuma ser o pronome do caso reto.",
+   "São eles: <b>1ª pessoa</b> — <span class='keyword'>eu</span> (singular) e <span class='keyword'>nós</span> (plural); <b>2ª pessoa</b> — <span class='keyword'>tu</span> (singular) e <span class='keyword'>vós</span> (plural); <b>3ª pessoa</b> — <span class='keyword'>ele/ela</span> (singular) e <span class='keyword'>eles/elas</span> (plural).",
+   "Veja no palco: <i>'<b>Eu</b> gosto de ler.'</i> — quem pratica a ação de gostar? Eu. <i>'<b>Nós</b> estudamos Português.'</i> <i>'<b>Ela</b> fez a atividade.'</i> <i>'<b>Eles</b> foram à biblioteca.'</i> Repare que <b>eu</b> e <b>tu</b> são sempre do caso reto (sujeito) — guarde isso, porque a prova adora testar."
+  ],
+  perguntas:[
+   {tipo:"conceitual", q:"O que caracteriza um pronome do caso reto? Qual papel ele faz na frase?",
+    modelo:"O pronome do caso reto faz o papel de sujeito da frase, ou seja, indica quem pratica a ação do verbo.",
+    chk:["Falei que ele é o sujeito da frase?","Falei que indica quem pratica a ação?"]},
+   {tipo:"aplicacao", q:"Escreva DUAS frases suas: uma com o pronome reto 'eu' como sujeito e outra com o pronome reto 'eles' como sujeito.",
+    modelo:"Exemplos: 'Eu terminei a lição cedo.' e 'Eles jogaram bola no recreio.' O que vale é 'eu' e 'eles' aparecerem como quem pratica a ação.",
+    chk:["Fiz uma frase com 'eu' praticando a ação?","Fiz uma frase com 'eles' praticando a ação?"]},
+   {tipo:"aplicacao", q:"Na frase 'Nós vencemos o campeonato', identifique o pronome do caso reto e diga a pessoa e o número dele.",
+    modelo:"O pronome do caso reto é 'nós'. Ele é da 1ª pessoa do plural e é o sujeito (quem venceu).",
+    chk:["Apontei 'nós' como o pronome reto/sujeito?","Disse que é 1ª pessoa do plural?"]}
+  ]
+ },
+ {
+  id:"b3", cor:"h-navy", emoji:"🎭", titulo:"Bloco 3 — Coxia: pronomes do caso OBLÍQUO",
+  paragrafos:[
+   "Na coxia (a lateral do palco) ficam os <span class='keyword'>coadjuvantes</span>: os pronomes pessoais do <span class='keyword'>caso oblíquo</span>. Eles fazem o papel de <span class='keyword'>complemento do verbo</span>, ou seja, indicam <b>quem recebe ou sofre a ação</b> (e não quem pratica).",
+   "A lista principal é: <b>1ª pessoa</b> — <span class='keyword'>me, mim, comigo</span> (sing.) e <span class='keyword'>nos, conosco</span> (pl.); <b>2ª pessoa</b> — <span class='keyword'>te, ti, contigo</span> (sing.) e <span class='keyword'>vos, convosco</span> (pl.); <b>3ª pessoa</b> — <span class='keyword'>se, si, o, a, lhe</span> (sing.) e <span class='keyword'>se, si, os, as, lhes</span> (pl.).",
+   "Veja os coadjuvantes em cena: <i>'Minha mãe <b>me</b> chamou.'</i> <i>'O professor <b>nos</b> ajudou.'</i> <i>'João <b>lhe</b> entregou o livro.'</i> <i>'Maria falou <b>comigo</b>.'</i> <i>'Pedro trouxe um presente para <b>ela</b>.'</i>",
+   "⭐ <b>Atenção clássica da prova:</b> <span class='keyword'>eu</span> e <span class='keyword'>tu</span> são do caso RETO (sujeito): 'Eu fiz a tarefa.', 'Tu estudaste para a prova.'. Já <span class='keyword'>mim</span> e <span class='keyword'>ti</span> são OBLÍQUOS: 'Ela trouxe um presente para <b>mim</b>.', 'Este livro é para <b>ti</b>.'. Um jeito fácil: depois da palavra <b>para</b>, quase sempre usamos <b>mim/ti</b>, não 'eu/tu'."
+  ],
+  perguntas:[
+   {tipo:"conceitual", q:"Qual é a diferença entre um pronome do caso reto e um do caso oblíquo (pense no papel de cada um)?",
+    modelo:"O caso reto é sujeito (quem pratica a ação); o caso oblíquo é complemento (quem recebe ou sofre a ação).",
+    chk:["Falei que o reto pratica a ação (sujeito)?","Falei que o oblíquo recebe a ação (complemento)?"]},
+   {tipo:"aplicacao", q:"A frase 'Este presente é para eu' está errada. Reescreva corrigindo e explique com suas palavras por que a sua versão está certa.",
+    modelo:"O certo é 'Este presente é para mim'. Depois de 'para' usamos o pronome oblíquo 'mim', porque 'eu' é do caso reto (sujeito) e ali o pronome não pratica a ação.",
+    chk:["Troquei 'para eu' por 'para mim'?","Expliquei que 'mim' é oblíquo (e 'eu' seria sujeito)?"]},
+   {tipo:"aplicacao", q:"Evite a repetição: reescreva 'Encontrei o professor e cumprimentei o professor' trocando o segundo 'o professor' por um pronome oblíquo.",
+    modelo:"'Encontrei o professor e o cumprimentei.' (ou 'e cumprimentei-o'). O pronome oblíquo 'o' substitui 'o professor' como complemento do verbo.",
+    chk:["Usei o pronome oblíquo 'o' no lugar de 'o professor'?","A frase ficou sem repetir 'o professor'?"]}
+  ]
+ },
+ {
+  id:"b4", cor:"h-plum", emoji:"👑", titulo:"Bloco 4 — Camarote Real: pronomes de TRATAMENTO",
+  paragrafos:[
+   "No camarote real sentam-se as autoridades — e para falar com elas usamos os <span class='keyword'>pronomes de tratamento</span>. Eles servem para nos dirigirmos a alguém de maneira <b>respeitosa e formal</b>, conforme a posição social da pessoa.",
+   "Os principais: <span class='keyword'>você</span> (tratamento comum e respeitoso); <span class='keyword'>o senhor / a senhora</span> (pessoas adultas, respeito); <span class='keyword'>a senhorita</span> (moças solteiras); <span class='keyword'>Vossa Senhoria</span> (correspondência comercial, funcionários graduados); <span class='keyword'>Vossa Excelência</span> (altas autoridades: presidentes, ministros, deputados); <span class='keyword'>Vossa Eminência</span> (cardeais); <span class='keyword'>Vossa Reverendíssima</span> (sacerdotes); <span class='keyword'>Vossa Magnificência</span> (reitores de universidade); <span class='keyword'>Vossa Santidade</span> (o Papa); <span class='keyword'>Vossa Majestade</span> (reis e rainhas); <span class='keyword'>Vossa Alteza</span> (príncipes, princesas e duques).",
+   "🎯 <b>A regra que o professor destacou — VOSSA × SUA:</b> usamos <span class='keyword'>VOSSA</span> quando falamos <u>COM</u> a pessoa (ela está na nossa frente): 'Vossa Excelência precisa de ajuda?'. Usamos <span class='keyword'>SUA</span> quando falamos <u>SOBRE</u> a pessoa (ela não está, estamos comentando dela): 'Sua Excelência chegará ao anoitecer.'",
+   "⚠️ <b>Cuidado com o verbo:</b> apesar de terem a palavra 'Vossa', esses pronomes pedem o verbo na <span class='keyword'>3ª pessoa</span> (como 'ele/ela'): 'Vossa Excelência <b>está</b> presente.' (certo). 'Vossa Excelência <b>estais</b> presente.' (errado)."
+  ],
+  perguntas:[
+   {tipo:"conceitual", q:"Para que servem os pronomes de tratamento? Responda com as suas palavras.",
+    modelo:"Servem para falar com alguém de forma respeitosa e formal, de acordo com a posição social da pessoa (como uma autoridade, um religioso, um adulto etc.).",
+    chk:["Falei que servem para tratar alguém com respeito/formalidade?","Liguei o uso à posição/importância da pessoa?"]},
+   {tipo:"aplicacao", q:"Escolha o pronome de tratamento certo para cada um e escreva numa frase: (a) o Papa e (b) um rei.",
+    modelo:"(a) Para o Papa usamos 'Vossa Santidade': 'Vossa Santidade abençoa os fiéis.' (b) Para um rei usamos 'Vossa Majestade': 'Vossa Majestade governa o reino.'",
+    chk:["Usei 'Vossa Santidade' para o Papa?","Usei 'Vossa Majestade' para o rei?"]},
+   {tipo:"aplicacao", q:"Complete com VOSSA ou SUA e explique a escolha: '____ Excelência aceita um café?' (a pessoa está na sua frente) e '____ Excelência viajou ontem.' (você está falando dela para outra pessoa).",
+    modelo:"'VOSSA Excelência aceita um café?' — porque falo COM a pessoa. 'SUA Excelência viajou ontem.' — porque falo SOBRE a pessoa (ela não está na conversa).",
+    chk:["Usei VOSSA quando se fala COM a pessoa?","Usei SUA quando se fala SOBRE a pessoa?"]}
+  ]
+ },
+ {
+  id:"b5", cor:"h-bordo", emoji:"🔭", titulo:"Bloco 5 — Plateia: pronomes DEMONSTRATIVOS",
+  paragrafos:[
+   "Agora olhe da plateia para o palco. Os <span class='keyword'>pronomes demonstrativos</span> servem para <b>indicar e localizar</b> pessoas, objetos e coisas conforme a <span class='keyword'>posição</span> deles — se estão perto ou longe das pessoas da conversa.",
+   "<b>Perto de QUEM FALA</b> (1ª pessoa): <span class='keyword'>este, esta, estes, estas, isto</span>. Jeito fácil: ESTE → 'aqui comigo'. Ex.: 'Este livro está comigo.', 'Isto que estou segurando é um presente.'",
+   "<b>Perto de QUEM OUVE</b> (2ª pessoa): <span class='keyword'>esse, essa, esses, essas, isso</span>. Jeito fácil: ESSE → 'aí com você'. Ex.: 'Esse caderno que está com você é novo.', 'O que é isso que você segura?'",
+   "<b>LONGE DOS DOIS</b> (3ª pessoa): <span class='keyword'>aquele, aquela, aqueles, aquelas, aquilo</span>. Jeito fácil: AQUELE → 'lá, distante'. Ex.: 'Aquele prédio fica do outro lado da rua.', 'O que é aquilo no alto da montanha?'",
+   "Guarde a tabelinha: perto de quem fala → este/isto; perto de quem ouve → esse/isso; longe dos dois → aquele/aquilo. As formas <b>isto, isso, aquilo</b> são neutras (não têm plural nem feminino)."
+  ],
+  perguntas:[
+   {tipo:"conceitual", q:"O que os pronomes demonstrativos indicam? Responda com as suas palavras.",
+    modelo:"Eles indicam e localizam pessoas, objetos e coisas de acordo com a posição (perto ou longe) em relação às pessoas da conversa.",
+    chk:["Falei que localizam/indicam coisas ou pessoas?","Liguei isso à posição (perto/longe) na conversa?"]},
+   {tipo:"aplicacao", q:"Complete com ESTE, ESSE ou AQUELE e explique cada escolha: '____ caneta aqui na minha mão é azul.'; '____ boné aí no seu colo é bonito.'; '____ montanha lá no horizonte é enorme.'",
+    modelo:"'ESTA caneta aqui na minha mão' (perto de quem fala); 'ESSE boné aí no seu colo' (perto de quem ouve); 'AQUELA montanha lá no horizonte' (longe dos dois).",
+    chk:["Usei este/esta para o que está perto de quem fala?","Usei esse e aquele corretamente (perto de quem ouve / longe)?"]},
+   {tipo:"aplicacao", q:"Escreva TRÊS frases suas: uma com um demonstrativo de perto de você, uma de perto do ouvinte e uma de algo distante dos dois.",
+    modelo:"Exemplo: 'Este lápis é meu.' (perto de mim), 'Esse casaco aí é seu?' (perto de você), 'Aquele carro lá na esquina é do meu tio.' (longe dos dois).",
+    chk:["Fiz uma frase com este/isto (perto de mim)?","Fiz frases com esse (perto do ouvinte) e aquele (distante)?"]}
+  ]
+ },
+ {
+  id:"b6", cor:"h-gold", emoji:"📜", titulo:"Bloco 6 — O Roteiro: demonstrativos no texto",
+  paragrafos:[
+   "Fora do palco, no <span class='keyword'>roteiro</span> (o texto escrito), os demonstrativos ganham outra função muito cobrada: eles ajudam a organizar as ideias. Fazem isso de dois jeitos: <span class='keyword'>retomando</span> algo que já foi dito ou <span class='keyword'>antecipando</span> algo que ainda vai ser dito.",
+   "<b>Retomar</b> = apontar para algo que já apareceu antes. Ex.: 'Maria ganhou um livro novo. <b>Esse</b> livro conta uma história de aventura.' Aqui, 'esse' retoma a palavra 'livro' que já tinha sido citada.",
+   "<b>Antecipar</b> = anunciar algo que vem em seguida. Ex.: '<b>Isto</b> é importante: devemos respeitar os animais.' Aqui, 'isto' antecipa a informação que vem logo depois dos dois-pontos.",
+   "Uma dica: quando o demonstrativo aponta para trás (algo já escrito), ele está retomando; quando aponta para a frente (algo que ainda virá), está antecipando."
+  ],
+  perguntas:[
+   {tipo:"conceitual", q:"Explique, com as suas palavras, o que significa um demonstrativo 'retomar' e 'antecipar' num texto.",
+    modelo:"Retomar é apontar para algo que já foi dito antes no texto. Antecipar é anunciar algo que ainda vai ser dito, logo em seguida.",
+    chk:["Falei que retomar é apontar para algo já dito?","Falei que antecipar é anunciar algo que ainda vem?"]},
+   {tipo:"aplicacao", q:"Na frase 'Estude todos os dias: isso vai te ajudar na prova', o pronome 'isso' está retomando ou antecipando? Justifique.",
+    modelo:"Está retomando: 'isso' aponta para a ideia já dita antes ('estudar todos os dias'). Ele resume o que veio antes.",
+    chk:["Disse que 'isso' está retomando?","Justifiquei que ele aponta para o que já foi dito antes?"]},
+   {tipo:"aplicacao", q:"Escreva um exemplo seu, com duas frases, em que um demonstrativo (esse/essa/isso) retome uma palavra da primeira frase.",
+    modelo:"Exemplo: 'Comprei uma bicicleta nova. Essa bicicleta é vermelha.' O 'essa' retoma a palavra 'bicicleta' da primeira frase.",
+    chk:["Escrevi duas frases minhas?","O demonstrativo retomou uma palavra da primeira frase?"]}
+  ]
+ },
+ {
+  id:"b7", cor:"h-navy", emoji:"🎟️", titulo:"Bloco 7 — Sessão de Estreia: interpretação de texto",
+  paragrafos:[
+   "Chegou a estreia! Leia com atenção este conto africano, recontado a partir de <i>'A princesa, o fogo e a chuva'</i> (Ana Soler-Pont).",
+   "Era uma vez um rei que tinha uma filha muito bonita. Muitos pretendentes queriam se casar com ela — entre eles, o <b>Fogo</b> e a <b>Chuva</b>, que pediram a mão da princesa. Para decidir, o rei prometeu a filha a quem vencesse uma <span class='keyword'>corrida</span> no dia do casamento. A princesa, porém, tinha um desejo secreto: prometeu casar-se só com a Chuva.",
+   "No dia marcado, ventava muito. Com o vento a favor, o <b>Fogo</b> foi ganhando a corrida e espalhava suas chamas cada vez mais rápido. Mas, perto do fim, a <b>Chuva</b> despejou uma enorme cortina de água, apagou o Fogo e venceu. A princesa, feliz, dançou na chuva.",
+   "Desde então existe uma <span class='keyword'>inimizade</span> entre o fogo e a chuva. Por isso, dizem, sempre que chove com muita força é como se a natureza lembrasse o dia do casamento da princesa com a Chuva."
+  ],
+  perguntas:[
+   {tipo:"conceitual", q:"Conte, com as suas palavras, o que o rei prometeu e como a corrida terminou.",
+    modelo:"O rei prometeu a filha a quem vencesse uma corrida no dia do casamento. No fim, a Chuva venceu o Fogo, apagando as chamas com uma cortina de água.",
+    chk:["Falei da promessa do rei (casar a filha com quem vencesse a corrida)?","Falei que a Chuva venceu o Fogo?"]},
+   {tipo:"aplicacao", q:"Por que a princesa ficou feliz no final? Escreva uma resposta sua explicando o motivo, com base no texto.",
+    modelo:"Porque ela queria mesmo casar-se com a Chuva, e foi a Chuva quem venceu a corrida. Como o seu desejo se realizou, ela dançou feliz na chuva.",
+    chk:["Liguei a felicidade dela ao desejo de casar com a Chuva?","Mostrei que o resultado da corrida realizou esse desejo?"]},
+   {tipo:"aplicacao", q:"No conto há a frase 'a princesa prometeu casar-se só com a Chuva'. Reescreva essa ideia trocando 'a princesa' por um pronome do caso reto.",
+    modelo:"'Ela prometeu casar-se só com a Chuva.' O pronome reto 'ela' substitui 'a princesa' como sujeito.",
+    chk:["Usei o pronome reto 'ela' no lugar de 'a princesa'?","A frase continua com o mesmo sentido do texto?"]}
+  ]
+ }
+];
+
+// ====== ESTADO / SALVAMENTO ======
+const KEY="port6sj_pronomes_leitura_v1";
+let store={};
+const mem={}; // fallback
+function load(){
+  try{ const raw=localStorage.getItem(KEY); if(raw) store=JSON.parse(raw); }
+  catch(e){ store=mem[KEY]?JSON.parse(mem[KEY]):{}; }
+  if(!store.blocos) store.blocos={};
+}
+function save(){
+  store.quando=new Date().toLocaleString('pt-BR');
+  const raw=JSON.stringify(store);
+  try{ localStorage.setItem(KEY,raw); }catch(e){ mem[KEY]=raw; }
+  const el=document.getElementById('saveInfo'); if(el) el.textContent="Salvo "+store.quando;
+}
+
+// ====== ANTICÓPIA ======
+function normWords(s){
+  return (s||"").toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')
+    .replace(/[^a-z0-9\s]/g,' ').split(/\s+/).filter(Boolean);
+}
+function hasRun(hay,seq){
+  if(seq.length===0) return false;
+  for(let i=0;i+seq.length<=hay.length;i++){
+    let ok=true;
+    for(let j=0;j<seq.length;j++){ if(hay[i+j]!==seq[j]){ok=false;break;} }
+    if(ok) return true;
+  }
+  return false;
+}
+function detectTranscricao(answer, blockText, questionText){
+  const a=normWords(answer), b=normWords(blockText), q=normWords(questionText);
+  const n=a.length;
+  if(n<5) return {transcrita:false, maxRun:0, cov:0};
+  let maxRun=0; const covered=new Array(n).fill(false);
+  for(let i=0;i<n;i++){
+    let len=0;
+    for(let l=1;i+l<=n;l++){ if(hasRun(b,a.slice(i,i+l))) len=l; else break; }
+    if(len>=1){
+      const seg=a.slice(i,i+len);
+      const inQ = len>=4 && hasRun(q,seg);
+      if(!inQ){
+        if(len>maxRun) maxRun=len;
+        if(len>=5){ for(let k=i;k<i+len;k++) covered[k]=true; }
+      }
+    }
+  }
+  const cov = covered.filter(Boolean).length / n;
+  return {transcrita:(maxRun>=8 || cov>0.6), maxRun, cov};
+}
+
+// ====== RENDER ======
+function blockPlainText(bl){
+  return bl.paragrafos.map(p=>p.replace(/<[^>]+>/g,' ')).join(' ');
+}
+function st(bid){ if(!store.blocos[bid]) store.blocos[bid]={perg:{},conferido:false}; return store.blocos[bid]; }
+
+function render(){
+  const cont=document.getElementById('blocos'); cont.innerHTML="";
+  BLOCOS.forEach((bl,idx)=>{
+    const s=st(bl.id);
+    const prev = idx===0 ? true : st(BLOCOS[idx-1].id).conferido;
+    const locked = !prev && !s.conferido;
+    const div=document.createElement('div');
+    div.className="block"+(locked?" locked":"");
+    let statusTxt = s.conferido ? blockStatusLabel(bl) : "";
+    let html=`<div class="block-head ${bl.cor}"><span>${bl.emoji} ${bl.titulo}</span><span class="block-status">${statusTxt}</span></div>`;
+    html+=`<div class="block-body">`;
+    if(locked){
+      html+=`<p><i>🔒 Confira a cena anterior para abrir esta.</i></p>`;
+    }else{
+      html+=`<div class="txt">${bl.paragrafos.map(p=>`<p>${p}</p>`).join("")}</div>`;
+      bl.perguntas.forEach((pg,qi)=>{
+        const ps=s.perg[qi]||{};
+        const red = ps.transcrita ? " red":"";
+        const tag = pg.tipo==="conceitual" ? `<span class="tag tag-con">conceito</span>` : `<span class="tag tag-apl">aplicação</span>`;
+        html+=`<div class="q${red}" id="${bl.id}_q${qi}">`;
+        html+=`${tag}<label>${qi+1}) ${pg.q}</label>`;
+        html+=`<textarea id="${bl.id}_t${qi}" oninput="onType('${bl.id}',${qi})">${escapeHtml(ps.resp||"")}</textarea>`;
+        html+=`<div class="alert copy" id="${bl.id}_copy${qi}" style="display:none"></div>`;
+        html+=`<div class="alert redwarn" id="${bl.id}_red${qi}" style="display:${ps.transcrita?'block':'none'}">🔴 Esta resposta ficou muito parecida com o texto. Tente reescrever com as suas palavras — isso limpa a marca automaticamente.</div>`;
+        html+=`<div class="modelo${s.conferido?' show':''}" id="${bl.id}_m${qi}">`;
+        html+=`<div class="mtitle">✅ Resposta modelo</div><div>${pg.modelo}</div>`;
+        html+=`<div class="chk">`;
+        pg.chk.forEach((c,ci)=>{
+          const v=(ps.chk&&ps.chk[ci])||"";
+          html+=`<div class="cline"><span>${c}</span>`+
+            `<button class="${v==='sim'?'sel-sim':''}" onclick="setChk('${bl.id}',${qi},${ci},'sim')">Sim</button>`+
+            `<button class="${v==='nao'?'sel-nao':''}" onclick="setChk('${bl.id}',${qi},${ci},'nao')">Não</button></div>`;
+        });
+        html+=`</div></div>`;
+        html+=`</div>`;
+      });
+      html+=`<button class="conferir" id="${bl.id}_btn" onclick="conferir('${bl.id}')">${s.conferido?'✔ Conferido — conferir de novo':'Conferir cena'}</button>`;
+    }
+    html+=`</div>`;
+    div.innerHTML=html;
+    cont.appendChild(div);
+  });
+  atualizarRevisar();
+}
+function escapeHtml(s){return (s||"").replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+
+function blockStatusLabel(bl){
+  const s=st(bl.id); let anyNao=false, anyRed=false;
+  bl.perguntas.forEach((pg,qi)=>{
+    const ps=s.perg[qi]||{};
+    if(ps.transcrita) anyRed=true;
+    (pg.chk||[]).forEach((c,ci)=>{ if(ps.chk&&ps.chk[ci]==='nao') anyNao=true; });
+  });
+  return (anyNao||anyRed) ? "🔁 revisar" : "✅ ok";
+}
+
+function onType(bid,qi){
+  const s=st(bid); if(!s.perg[qi]) s.perg[qi]={};
+  const val=document.getElementById(bid+'_t'+qi).value;
+  s.perg[qi].resp=val;
+  if(s.perg[qi].transcrita){
+    const bl=BLOCOS.find(b=>b.id===bid); const pg=bl.perguntas[qi];
+    const d=detectTranscricao(val, blockPlainText(bl), pg.q);
+    if(!d.transcrita){
+      s.perg[qi].transcrita=false;
+      const q=document.getElementById(bid+'_q'+qi); if(q) q.classList.remove('red');
+      const rw=document.getElementById(bid+'_red'+qi); if(rw) rw.style.display='none';
+    }
+  }
+  save(); atualizarRevisar();
+}
+
+function setChk(bid,qi,ci,val){
+  const s=st(bid); if(!s.perg[qi]) s.perg[qi]={}; if(!s.perg[qi].chk) s.perg[qi].chk={};
+  s.perg[qi].chk[ci]=val; save(); render();
+}
+
+function conferir(bid){
+  const bl=BLOCOS.find(b=>b.id===bid); const s=st(bid);
+  const blockText=blockPlainText(bl);
+  for(let qi=0;qi<bl.perguntas.length;qi++){
+    const v=(document.getElementById(bid+'_t'+qi).value||"").trim();
+    if(v.length<3){
+      showMini(bid, "Preencha as 3 respostas (pelo menos 3 letras cada) antes de conferir. 💪");
+      return;
+    }
+  }
+  let bloqueio=false;
+  for(let qi=0;qi<bl.perguntas.length;qi++){
+    const pg=bl.perguntas[qi]; const ps=s.perg[qi]||(s.perg[qi]={});
+    const val=document.getElementById(bid+'_t'+qi).value;
+    ps.resp=val;
+    const copyEl=document.getElementById(bid+'_copy'+qi);
+    const d=detectTranscricao(val, blockText, pg.q);
+    if(d.transcrita){
+      if(!ps.tentou){
+        ps.tentou=val;
+        copyEl.textContent="✏️ Boa parte da sua resposta está igual ao texto. Tente reescrever com as suas palavras — explique como se fosse para um amigo, sem olhar o texto. Pode ficar mais curto e simples, o que vale é ser SEU!";
+        copyEl.style.display="block";
+        bloqueio=true;
+      }else{
+        ps.transcrita=true;
+        copyEl.style.display="none";
+        const rw=document.getElementById(bid+'_red'+qi); if(rw) rw.style.display="block";
+        const q=document.getElementById(bid+'_q'+qi); if(q) q.classList.add('red');
+      }
+    }else{
+      ps.transcrita=false;
+      copyEl.style.display="none";
+      const rw=document.getElementById(bid+'_red'+qi); if(rw) rw.style.display="none";
+      const q=document.getElementById(bid+'_q'+qi); if(q) q.classList.remove('red');
+    }
+  }
+  save();
+  if(bloqueio){ return; }
+  s.conferido=true;
+  save(); render();
+}
+
+function showMini(bid,msg){
+  const copyEl=document.getElementById(bid+'_copy0');
+  if(copyEl){ copyEl.textContent=msg; copyEl.style.display="block"; setTimeout(()=>{copyEl.style.display="none";},4000); }
+}
+
+function atualizarRevisar(){
+  const box=document.getElementById('revisarBox'); const ul=document.getElementById('revisarList');
+  ul.innerHTML=""; let n=0;
+  BLOCOS.forEach(bl=>{
+    const s=st(bl.id);
+    bl.perguntas.forEach((pg,qi)=>{
+      const ps=s.perg[qi]||{};
+      let motivo="";
+      if(ps.transcrita) motivo="resposta muito parecida com o texto";
+      let anyNao=false; (pg.chk||[]).forEach((c,ci)=>{ if(ps.chk&&ps.chk[ci]==='nao') anyNao=true; });
+      if(anyNao) motivo=motivo?motivo+" e algum 'não' na autoavaliação":"algum 'não' na autoavaliação";
+      if(motivo){ n++; const li=document.createElement('li'); li.innerHTML=`<b>${bl.titulo}</b>, pergunta ${qi+1} — ${motivo}.`; ul.appendChild(li); }
+    });
+  });
+  box.style.display = n>0 ? "block":"none";
+}
+
+// ====== EXPORTAR / IMPORTAR / ZERAR ======
+function exportar(){
+  const data=JSON.stringify(store,null,2);
+  const blob=new Blob([data],{type:"application/json"});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
+  a.download="leitura-portugues-6ano-pronomes.json"; a.click();
+}
+function abrirImport(){ document.getElementById('importModal').classList.add('show'); }
+function fecharImport(){ document.getElementById('importModal').classList.remove('show'); }
+function fazerImport(){
+  try{ const t=document.getElementById('importText').value; const obj=JSON.parse(t); store=obj; if(!store.blocos)store.blocos={}; save(); render(); fecharImport(); }
+  catch(e){ document.getElementById('importText').value="⚠️ Texto inválido. Cole o conteúdo exportado.\n\n"+document.getElementById('importText').value; }
+}
+function zerar(){
+  store={blocos:{}};
+  try{ localStorage.removeItem(KEY); }catch(e){}
+  save(); render();
+}
+
+// ====== INÍCIO ======
+load(); render();
+if(store.quando){ document.getElementById('saveInfo').textContent="Salvo "+store.quando; }
+</script>
+</body>
+</html>
