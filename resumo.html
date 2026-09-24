@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resumo — Português 6º ano | Teatro dos Pronomes 🎭</title>
+<style>
+  :root{--paper:#faf3e5;--ink:#3b271a;--bordo:#8b1e3f;--bordo-d:#6a1330;--gold:#c8971f;--gold-d:#a97d12;--navy:#2b3f6b;--plum:#6a3d6b;--card:#fff;--line:#e7dcc5;--soft:#f4ead4;--sun:#f0d488;--red:#c0392b}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:'Segoe UI',system-ui,sans-serif;background:var(--paper);color:var(--ink);font-size:18px;line-height:1.6}
+  .wrap{max-width:960px;margin:0 auto;padding:16px}
+  header.top{background:linear-gradient(135deg,#c8971f,#6a3d6b);color:#fff;border-radius:20px;padding:26px 24px;margin:12px 0 8px;box-shadow:0 6px 20px rgba(106,61,107,.25)}
+  header.top h1{margin:0 0 6px;font-size:28px}
+  header.top p{margin:0;font-size:16px;opacity:.96}
+  nav.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+  nav.tabs a{background:#fff;border:2px solid var(--line);border-radius:999px;padding:8px 14px;text-decoration:none;color:var(--ink);font-weight:600;font-size:15px}
+  nav.tabs a.active{background:var(--plum);border-color:var(--plum);color:#fff}
+  h2.sec{margin:26px 0 6px;color:var(--bordo);border-bottom:3px solid var(--sun);padding-bottom:4px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+  .flip{perspective:1000px;height:180px;cursor:pointer}
+  .flip .inner{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
+  .flip.on .inner{transform:rotateY(180deg)}
+  .flip .face{position:absolute;inset:0;backface-visibility:hidden;border-radius:16px;padding:14px;display:flex;flex-direction:column;justify-content:center;box-shadow:0 3px 10px rgba(0,0,0,.06)}
+  .flip .front{background:#fff;border:2px solid var(--plum)}
+  .flip .front .t{font-weight:700;font-size:19px;color:var(--plum)}
+  .flip .front .hint{font-size:13px;color:#9a9a9a;margin-top:8px}
+  .flip .back{background:#f6eefb;border:2px solid var(--plum);transform:rotateY(180deg);font-size:15px;overflow:auto}
+  .postit{background:#fff6c8;border-radius:6px;padding:14px 16px;margin:14px 0;box-shadow:2px 3px 8px rgba(0,0,0,.08);border-left:6px solid var(--gold)}
+  .postit b{color:var(--gold-d)}
+  .alerta{background:#fdeeee;border-left:6px solid var(--red);border-radius:6px;padding:12px 16px;margin:14px 0}
+  .alerta b{color:var(--red)}
+  .panel{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 20px;margin:14px 0}
+  table.tb{width:100%;border-collapse:collapse;font-size:16px;margin:8px 0}
+  table.tb th,table.tb td{border:1px solid var(--line);padding:9px;text-align:center}
+  table.tb th{background:var(--soft)}
+  table.tb caption{font-weight:700;color:var(--bordo);margin-bottom:6px;text-align:left}
+  table.gloss{width:100%;border-collapse:collapse;font-size:16px}
+  table.gloss th,table.gloss td{border:1px solid var(--line);padding:9px;text-align:left;vertical-align:top}
+  table.gloss th{background:var(--soft)}
+  table.gloss td:first-child{font-weight:700;color:var(--plum);white-space:nowrap}
+  .progress{position:sticky;top:0;background:var(--paper);padding:8px 0;z-index:5}
+  .bar{height:12px;background:#eee;border-radius:999px;overflow:hidden}
+  .bar>div{height:100%;background:linear-gradient(90deg,var(--gold),var(--plum));width:0}
+  .footer-nav{display:flex;justify-content:space-between;margin:20px 0;gap:10px;flex-wrap:wrap}
+  .footer-nav a{background:var(--plum);color:#fff;text-decoration:none;border-radius:12px;padding:12px 18px;font-weight:700}
+  small.muted{color:#8a8674}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>🗺️ Resumo — Teatro dos Pronomes 🎭</h1>
+    <p>Língua Portuguesa · 6º ano · Colégio São José · Prof. Monier Julio dos Passos</p>
+    <p>Cartas para virar, tabelas, dicas em post-its e um glossário para revisar antes da prova (sexta). ✨</p>
+  </header>
+  <nav class="tabs">
+    <a href="index.html">🏠 Início</a>
+    <a href="leitura-guiada.html">📖 Leitura Guiada</a>
+    <a href="quiz.html">🎯 Quiz</a>
+    <a class="active" href="resumo.html">🗺️ Resumo</a>
+    <a href="simulado.html">📝 Simulado</a>
+  </nav>
+
+  <div class="progress"><div class="bar"><div id="pbar"></div></div>
+    <small class="muted" id="ptxt">Role até o fim para revisar tudo 🎭</small></div>
+
+  <h2 class="sec">🌟 Pronomes pessoais — caso RETO e caso OBLÍQUO</h2>
+  <div class="panel">
+    <table class="tb">
+      <caption>Caso RETO (função de SUJEITO — quem pratica a ação)</caption>
+      <tr><th>Pessoa</th><th>Singular</th><th>Plural</th></tr>
+      <tr><td>1ª (quem fala)</td><td>eu</td><td>nós</td></tr>
+      <tr><td>2ª (com quem se fala)</td><td>tu</td><td>vós</td></tr>
+      <tr><td>3ª (de quem se fala)</td><td>ele / ela</td><td>eles / elas</td></tr>
+    </table>
+    <table class="tb">
+      <caption>Caso OBLÍQUO (função de COMPLEMENTO — quem recebe a ação)</caption>
+      <tr><th>Pessoa</th><th>Singular</th><th>Plural</th></tr>
+      <tr><td>1ª</td><td>me, mim, comigo</td><td>nos, conosco</td></tr>
+      <tr><td>2ª</td><td>te, ti, contigo</td><td>vos, convosco</td></tr>
+      <tr><td>3ª</td><td>se, si, o, a, lhe</td><td>se, si, os, as, lhes</td></tr>
+    </table>
+  </div>
+  <div class="cards">
+    <div class="flip" onclick="this.classList.toggle('on')"><div class="inner">
+      <div class="face front"><div class="t">Caso reto</div><div class="hint">clique para virar 🔄</div></div>
+      <div class="face back">É o <b>sujeito</b> da frase (quem pratica a ação). Dica: pergunte "Quem pratica a ação?". Ex.: "<b>Eu</b> li o livro."</div></div></div>
+    <div class="flip" onclick="this.classList.toggle('on')"><div class="inner">
+      <div class="face front"><div class="t">Caso oblíquo</div><div class="hint">clique para virar 🔄</div></div>
+      <div class="face back">É o <b>complemento</b> (quem recebe/sofre a ação). Ex.: "Minha mãe <b>me</b> chamou.", "João <b>lhe</b> deu o livro."</div></div></div>
+    <div class="flip" onclick="this.classList.toggle('on')"><div class="inner">
+      <div class="face front"><div class="t">eu/tu × mim/ti</div><div class="hint">clique para virar 🔄</div></div>
+      <div class="face back"><b>eu, tu</b> = reto (sujeito). <b>mim, ti</b> = oblíquo. Depois de "para" quase sempre é mim/ti: "É para <b>mim</b>."</div></div></div>
+    <div class="flip" onclick="this.classList.toggle('on')"><div class="inner">
+      <div class="face front"><div class="t">Substituir sem repetir</div><div class="hint">clique para virar 🔄</div></div>
+      <div class="face back">Use o oblíquo no lugar do nome repetido: "Vi a professora e <b>a</b> cumprimentei." (o/a/os/as, lhe/lhes).</div></div></div>
+  </div>
+  <div class="postit">📌 <b>Dica de prova:</b> o reto é o <b>protagonista</b> (faz a ação); o oblíquo é o <b>coadjuvante</b> (recebe a ação). Se puder ser sujeito → reto. Se completa o verbo → oblíquo.</div>
+  <div class="alerta">⚠️ <b>Pegadinha:</b> "para eu" está errado. O certo é "para <b>mim</b>". ("Entre <b>mim</b> e você", nunca "entre eu e você".)</div>
+
+  <h2 class="sec">👑 Pronomes de TRATAMENTO</h2>
+  <div class="panel">
+    <table class="gloss">
+      <tr><th>Tratamento</th><th>Para quem</th></tr>
+      <tr><td>Você (V.)</td><td>tratamento comum e respeitoso</td></tr>
+      <tr><td>O senhor / A senhora</td><td>pessoas adultas, situações de respeito</td></tr>
+      <tr><td>A senhorita</td><td>moças solteiras</td></tr>
+      <tr><td>Vossa Senhoria (V. S.ª)</td><td>correspondência comercial, funcionários graduados</td></tr>
+      <tr><td>Vossa Excelência (V. Ex.ª)</td><td>altas autoridades (presidentes, ministros, deputados)</td></tr>
+      <tr><td>Vossa Eminência (V. Em.ª)</td><td>cardeais</td></tr>
+      <tr><td>Vossa Reverendíssima</td><td>sacerdotes e religiosos</td></tr>
+      <tr><td>Vossa Magnificência</td><td>reitores de universidade</td></tr>
+      <tr><td>Vossa Santidade (V. S.)</td><td>o Papa</td></tr>
+      <tr><td>Vossa Majestade (V. M.)</td><td>reis e rainhas</td></tr>
+      <tr><td>Vossa Alteza (V. A.)</td><td>príncipes, princesas e duques</td></tr>
+    </table>
+  </div>
+  <div class="cards">
+    <div class="flip" onclick="this.classList.toggle('on')"><div class="inner">
+      <div class="face front"><div class="t">VOSSA × SUA</div><div class="hint">clique para virar 🔄</div></div>
+      <div class="face back"><b>VOSSA</b> = falando COM a pessoa ("Vossa Excelência aceita?"). <b>SUA</b> = falando SOBRE a pessoa ("Sua Excelência viajou.").</div></div></div>
+    <div class="flip" onclick="this.classList.toggle('on')"><div class="inner">
+      <div class="face front"><div class="t">Verbo na 3ª pessoa</div><div class="hint">clique para virar 🔄</div></div>
+      <div class="face back">Mesmo com "Vossa", o verbo vai na 3ª pessoa: "Vossa Excelência <b>está</b> presente." (nunca "estais").</div></div></div>
+    <div class="flip" onclick="this.classList.toggle('on')"><div class="inner">
+      <div class="face front"><div class="t">Os "campeões" da prova</div><div class="hint">clique para virar 🔄</div></div>
+      <div class="face back">Papa → <b>Vossa Santidade</b>. Cardeal → <b>Vossa Eminência</b>. Rei → <b>Vossa Majestade</b>. Reitor → <b>Vossa Magnificência</b>.</div></div></div>
+  </div>
+  <div class="postit">📌 <b>Dica de prova:</b> <b>V</b>OSSA = fala<b>V</b>ando (falando COM). <b>S</b>UA = <b>S</b>obre (falando sobre). Guarde por essa letrinha! 💡</div>
+  <div class="alerta">⚠️ <b>Pegadinha:</b> "você" também é tratamento e pede o verbo na 3ª pessoa: "Você <b>estuda</b>" (não "você estudas").</div>
+
+  <h2 class="sec">🔭 Pronomes DEMONSTRATIVOS</h2>
+  <div class="panel">
+    <table class="tb">
+      <caption>Onde está a coisa? (posição no espaço)</caption>
+      <tr><th>Posição</th><th>Masc./Fem.</th><th>Neutro</th><th>Jeito fácil</th></tr>
+      <tr><td>Perto de quem FALA (1ª)</td><td>este, esta, estes, estas</td><td>isto</td><td>"aqui comigo"</td></tr>
+      <tr><td>Perto de quem OUVE (2ª)</td><td>esse, essa, esses, essas</td><td>isso</td><td>"aí com você"</td></tr>
+      <tr><td>LONGE dos dois (3ª)</td><td>aquele, aquela, aqueles, aquelas</td><td>aquilo</td><td>"lá, distante"</td></tr>
+    </table>
+  </div>
+  <div class="cards">
+    <div class="flip" onclick="this.classList.toggle('on')"><div class="inner">
+      <div class="face front"><div class="t">ESTE</div><div class="hint">clique para virar 🔄</div></div>
+      <div class="face back">Perto de quem fala ("aqui comigo"). Ex.: "<b>Este</b> livro está na minha mão."</div></div></div>
+    <div class="flip" onclick="this.classList.toggle('on')"><div class="inner">
+      <div class="face front"><div class="t">ESSE</div><div class="hint">clique para virar 🔄</div></div>
+      <div class="face back">Perto de quem ouve ("aí com você"). Ex.: "<b>Esse</b> caderno aí é seu?"</div></div></div>
+    <div class="flip" onclick="this.classList.toggle('on')"><div class="inner">
+      <div class="face front"><div class="t">AQUELE</div><div class="hint">clique para virar 🔄</div></div>
+      <div class="face back">Longe dos dois ("lá, distante"). Ex.: "<b>Aquele</b> prédio fica do outro lado da rua."</div></div></div>
+    <div class="flip" onclick="this.classList.toggle('on')"><div class="inner">
+      <div class="face front"><div class="t">No texto: retomar</div><div class="hint">clique para virar 🔄</div></div>
+      <div class="face back">Aponta para algo já dito. "Maria ganhou um livro. <b>Esse</b> livro é de aventura." (esse retoma "livro").</div></div></div>
+    <div class="flip" onclick="this.classList.toggle('on')"><div class="inner">
+      <div class="face front"><div class="t">No texto: antecipar</div><div class="hint">clique para virar 🔄</div></div>
+      <div class="face back">Anuncia algo que vem depois. "<b>Isto</b> é importante: respeite os animais." (isto antecipa a ideia).</div></div></div>
+  </div>
+  <div class="postit">📌 <b>Dica de prova:</b> <b>EST</b>E = per<b>t</b>o de quem fala. <b>ESS</b>E = per<b>s</b>o de quem e<b>s</b>cuta. <b>AQU</b>ELE = lá longe. Repita 3 vezes e não erra mais! 😄</div>
+  <div class="alerta">⚠️ <b>Pegadinha:</b> <b>isto, isso, aquilo</b> são neutros — não têm plural nem feminino. Servem para o que a gente não nomeia: "O que é <b>isso</b>?"</div>
+
+  <div class="panel">
+    <h2 class="sec" style="margin-top:6px">📚 Glossário rápido</h2>
+    <table class="gloss">
+      <tr><th>Palavra</th><th>O que significa</th></tr>
+      <tr><td>Pronome</td><td>Palavra que substitui ou acompanha o substantivo (o nome), indicando as pessoas do discurso.</td></tr>
+      <tr><td>Pessoas do discurso</td><td>1ª = quem fala (eu/nós); 2ª = com quem se fala (tu/vós); 3ª = de quem se fala (ele/ela).</td></tr>
+      <tr><td>Caso reto</td><td>Pronome pessoal que funciona como sujeito (quem pratica a ação).</td></tr>
+      <tr><td>Caso oblíquo</td><td>Pronome pessoal que funciona como complemento (quem recebe a ação).</td></tr>
+      <tr><td>Pronome de tratamento</td><td>Forma respeitosa/formal de se dirigir a alguém, conforme a posição da pessoa.</td></tr>
+      <tr><td>Vossa / Sua</td><td>Vossa = falando COM a pessoa; Sua = falando SOBRE a pessoa.</td></tr>
+      <tr><td>Pronome demonstrativo</td><td>Indica e localiza coisas conforme a posição (perto/longe) e também no texto.</td></tr>
+      <tr><td>Retomar (no texto)</td><td>Quando o demonstrativo aponta para algo já dito antes.</td></tr>
+      <tr><td>Antecipar (no texto)</td><td>Quando o demonstrativo anuncia algo que ainda vai ser dito.</td></tr>
+      <tr><td>Neutro</td><td>As formas isto, isso, aquilo (sem plural nem feminino).</td></tr>
+    </table>
+  </div>
+
+  <div class="footer-nav">
+    <a href="quiz.html">← Quiz</a>
+    <a href="simulado.html">Ir para o Simulado →</a>
+  </div>
+  <p><small class="muted">Feito com carinho para o(a) jovem aprendiz. Fonte: livro de Língua Portuguesa do 6º ano (Colégio São José), pp. 252–257, 260–263 e 268–271.</small></p>
+</div>
+<script>
+  function upd(){
+    const h=document.documentElement;
+    const max=h.scrollHeight-h.clientHeight;
+    const p=max>0?Math.min(100,Math.round(h.scrollTop/max*100)):100;
+    document.getElementById('pbar').style.width=p+"%";
+    document.getElementById('ptxt').textContent = p>=95?"Revisão completa! 🎉 Você mandou bem no Teatro dos Pronomes.":("Revisão: "+p+"%");
+    try{
+      const K="port6sj_pronomes_resumo_v1"; let s={}; const r=localStorage.getItem(K); if(r)s=JSON.parse(r);
+      if(!s.maxScroll||p>s.maxScroll){ s.maxScroll=p; s.quando=new Date().toLocaleString('pt-BR'); localStorage.setItem(K,JSON.stringify(s)); }
+    }catch(e){}
+  }
+  window.addEventListener('scroll',upd); window.addEventListener('resize',upd); upd();
+</script>
+</body>
+</html>
